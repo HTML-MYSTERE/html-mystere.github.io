@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title>Extension</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="code">
-    <button onclick="if(document.getElementById('code').value.toUpperCase()==='AMYPATTE')alert('OK');">Test</button>
+    <div>
+        <input type="text" id="code" style="padding: 10px; margin: 10px;">
+        <button onclick="check()" style="padding: 10px;">Vérifier</button>
+    </div>
+    <script>
+        function check() {
+            if(document.getElementById('code').value.toUpperCase() === 'AMYPATTE') {
+                document.body.innerHTML = '<h1>✅ Correct</h1>';
+            } else {
+                alert('Code incorrect');
+            }
+        }
+    </script>
 </body>
 </html>
