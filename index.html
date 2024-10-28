@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Extension Numérique</title>
+    <meta charset="utf-8">
+    <title>Test</title>
 </head>
 <body>
-    <h1>Extension Numérique</h1>
-    <input type="text" id="code" placeholder="Entrez votre code">
-    <button onclick="verifier()">Valider</button>
-    <p id="message" style="color: red; display: none;">Code incorrect</p>
-
-    <script>
-    function verifier() {
-        var code = document.getElementById('code').value;
-        if (code.toUpperCase() === 'AMYPATTE') {
-            document.body.innerHTML = '<h1>Correct !</h1>';
-        } else {
-            document.getElementById('message').style.display = 'block';
-        }
-    }
-    </script>
+    <input type="text" id="code">
+    <button onclick="if(document.getElementById('code').value.toUpperCase()==='AMYPATTE')alert('OK');">Test</button>
 </body>
 </html>
