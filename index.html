@@ -2,55 +2,22 @@
 <html>
 <head>
     <title>Extension Numérique</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
-        #codeInput {
-            margin: 10px;
-            padding: 5px;
-            font-size: 16px;
-        }
-        #submitButton {
-            padding: 5px 15px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        #message {
-            margin-top: 10px;
-            color: red;
-            display: none;
-        }
-    </style>
 </head>
 <body>
-    <div class='container'>
-        <h1>Extension Numérique</h1>
-        <input type='text' id='codeInput' placeholder='Entrez votre code'>
-        <button id='submitButton' onclick='checkCode()'>Valider</button>
-        <p id='message'>Code incorrect</p>
-    </div>
+    <h1>Extension Numérique</h1>
+    <input type="text" id="code" placeholder="Entrez votre code">
+    <button onclick="verifier()">Valider</button>
+    <p id="message" style="color: red; display: none;">Code incorrect</p>
 
     <script>
-        function checkCode() {
-            const code = document.getElementById('codeInput').value;
-            const message = document.getElementById('message');
-            if(code.toUpperCase() === 'AMYPATTE') {
-                window.location.href = 'success.html';
-            } else {
-                message.style.display = 'block';
-            }
+    function verifier() {
+        var code = document.getElementById('code').value;
+        if (code.toUpperCase() === 'AMYPATTE') {
+            document.body.innerHTML = '<h1>Correct !</h1>';
+        } else {
+            document.getElementById('message').style.display = 'block';
         }
+    }
     </script>
 </body>
 </html>
